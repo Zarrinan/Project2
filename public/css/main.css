@@ -1,0 +1,245 @@
+body {
+  font-family: 'Convergence', sans-serif;
+  font-size: 20px;
+  color: rgb(51,0,0);
+  line-height: 1.5;
+}
+
+.page {
+  max-width: 1280px;
+  margin: auto;
+  font-size: 20px;
+
+}
+
+#logo {
+  height: 60px;
+  width: 60px;
+  float: left;
+  margin: 5px 0 0 0;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+#header {
+  background: rgb(211,213,254);
+  overflow: hidden;
+  border-bottom: 2px solid;
+  padding: 0 3%;
+  font-size: 20px;
+}
+
+nav {
+  float: right;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+li {
+  float: left;
+}
+
+a {
+  display: block;
+  padding: 20px 15px;
+  text-decoration: none;
+  color: rgb(51,0,0);
+}
+
+a:hover {
+  color: rgb(181,74,65);
+}
+
+
+footer {
+  background: rgb(211,213,254);
+  color: rgb(51,0,0);
+  padding: 2% 3%;
+  text-align: center;
+  border-top: 2px solid;
+  font-size: 20px;
+  margin-top: 150px;
+}
+
+#midSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+
+}
+
+#midSection2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 50px;
+  height: 400px;
+
+}
+
+h1 {
+  font-size: 2em;
+  line-height: 2;
+  text-align: center;
+}
+
+#landing {
+  width: 120px;
+  height: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 100%;
+  background: rgb(255,249,200);
+  color: black;
+  display: block;
+  text-align: center;
+  padding: 12px 12px 16px;
+  box-shadow: inset 0 -3px 0 rgba(0,0,0,.2);
+  border-radius: 5px;
+}
+
+#inTodos {
+  width: 72px;
+  height: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 15px;
+  background: rgb(255,249,200);
+  color: black;
+  display: block;
+  text-align: center;
+  padding: 0 0 7px;
+  box-shadow: inset 0 -3px 0 rgba(0,0,0,.2);
+  border-radius: 5px;
+}
+
+#todoList {
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 400px;
+}
+
+#addTodo {
+  width: 400px;
+  height: 50px;
+  border: 2px solid;
+  text-align: center;
+  border-radius: 5px;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+
+}
+.todo {
+  border: 1px solid;
+  width: 400px;
+  height: 102px;
+  padding: 0;
+  margin: 0 auto;
+  border: 2px solid;
+  border-radius: 3px;
+
+}
+
+.inline {
+  width: 400px;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  line-height: 50px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#title {
+  padding-left: 15px;
+  flex: 0 0 78%;
+}
+#status {
+  flex: 0 0 23%;
+  padding-left: 5px;
+}
+
+#category {
+  padding-left: 15px;
+  flex: 0 0 42%;
+}
+
+#clicks {
+  flex: 0 0 60%;
+  display: flex;
+  justify-content: center;
+}
+
+.addWrapper {
+  width: 400px;
+  display: flex;
+  margin: 0 auto;
+}
+
+.addInput {
+  width: 390px;
+  height: 30px;
+  font-size: 17px;
+  margin: 2px auto;
+  border-radius: 3px;
+}
+
+#descInput {
+  height: 100px;
+  vertical-align: top;
+  opacity: 0.5;
+}
+#desc {
+  width: 390px;
+  color: initial;
+}
+
+#addSubmit {
+  width: 90px;
+  height: 30px;
+  font-size: 20px;
+  padding: 2px 5px 10px;
+  background-color: royalblue;
+  border-radius: 10px;
+}
+
+.oneTodo {
+  width: 400px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+p {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+#oneTodoP {
+  width: 400px;
+  height: 130px;
+  border: 1px solid;
+  border-radius: 10px;
+}
+
+#singleTodo {
+  text-align: center;
+}
+
+.addWrapper {
+  width: 400px;
+  display: flex;
+  margin: 0 auto;
+}
+
+#editBack {
+  text-align: center;
+}
+#editDesc {
+  height: 50px;
+}

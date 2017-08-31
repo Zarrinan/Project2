@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ToDo App</title>
+  <link rel="stylesheet" type="text/css" href="reset.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <link href="https://fonts.googleapis.com/css?family=Convergence" rel="stylesheet">
+</head>
+<body>
+<header id="header">
+    <div class="page">
+      <div id='logo'>
+        <img src="https://image.ibb.co/mDkB95/logo_icon.png" alt="logo_icon" border="0">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="about">About</a></li>
+          <li><a href="todos">To Do</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section class="page" id="midSection2">
+  <div class='oneTodo'>
+      <h1><%= data.title %></h1>
+      <h3><%= data.category %></h3>
+      <h3><%= data.status %></h3>
+      <div id="desc">
+        <h2>Description</h2>
+      </div>
+      <p><%= data.description %></p>
+
+
+      <a href='/todos/'>Back to TODOS</a>
+  </div>
+
+  <!-- <div class='Welcome'>
+  <h1>Add a new item</h1>
+  </div>
+  <div id="addWrapper">
+<form method='POST' action='/todos'>
+  <input class="addInput" name='title' type='text' placeholder='title' />
+  <input class="addInput" name='category' type='text' placeholder='category' />
+  <input class="addInput" name='status' type='text' placeholder='status'>
+  <div id="desc">
+    <h2>Description</h2>
+  </div>
+  <input class="addInput" id="descInput" name='description' type='text'>
+  <input id="addSubmit" type='submit' value='Submit' />
+</form>
+</div>
+ -->
+  <!-- <div id="todoList">
+    <div id="addTodo">
+      <a href="/todos/add">Add todo</a>
+    </div>
+ <% for (let todo of data) { %>
+    <div class='todo'>
+      <div class="inline">
+          <div id="title">
+            <h3><%= todo.title %></h3>
+          </div>
+          <div id="status">
+            <h3><%= todo.status %></h3>
+          </div>
+      </div>
+      <div class="inline">
+          <div id="category">
+            <h3><%= todo.category %></h3>
+          </div>
+          <div id="clicks">
+            <form action="/todos/<%= todo.id %>?">
+              <input type="Submit" value="Info"/>
+            </form>
+            <form action="/todos/<%= todo.id %>?_method=Update" method="Put">
+              <input type="Submit" value="Edit"/>
+            </form>
+            <form action="/todos/<%= todo.id %>?_method=Delete " method="Post">
+              <input type="Submit" value="Delete"/>
+            </form>
+          </div>
+      </div>
+    </div>
+   </div>
+   </section>
+<%# <a href='/todos/<%= todo.id%>'>Learn more</a>%> -->
+    <!-- <div id="Welcome">
+    <h1>Welcome to my ToDo App!</h1>
+    </div>
+    <div id="totodos">
+      <form action=('/todos')>
+         <input type="submit" value="To Do"/>
+      </form>
+    </div> -->
+
+   </section>
+<footer>
+    <div class="page">
+      © 2017 Site by Zarrina Niyazova
+    </div>
+  </footer>
+</body>
+</html>
+
+<% for (let todo of data) { %>
+            <%= todo.title %>
+            <%= todo.status %>
+            <%= todo.category %>
+            <%= todo.description %>
+          <div id="clicks">
+            <form action="/todos/<%= todo.id %>?_method=Update" method="Put">
+              <input id="inTodos" type="Submit" value="Edit"/>
+            </form>
+            <form action="/todos/<%= todo.id %>?_method=Delete " method="Post">
+              <input id="inTodos" type="Submit" value="Delete"/>
+            </form>
+          </div>
+  <% } %>
+

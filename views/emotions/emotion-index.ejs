@@ -1,0 +1,54 @@
+<% include ../partials/header.ejs %>
+
+<section class="page" id="midSection2">
+
+
+ <div id="todoList">
+    <div id="addTodo">
+      <a href="/emotions/add">Add  record</a>
+    </div>
+ <% for (let emotion of data) { %>
+    <div class='todo'>
+      <div class="inline">
+        <div id="title">
+            <h3><%= emotion.date_created %></h3>
+        </div>
+        <div id="status">
+            <h3><%= emotion.happiness %></h3>
+        </div>
+        <div class="inline">
+          <div id="category">
+            <h3><%= emotion.sadness %></h3>
+        </div>
+        <div class="inline">
+          <div id="category">
+            <h3><%= emotion.anger %></h3>
+          </div>
+        <div class="inline">
+          <div id="category">
+            <h3><%= emotion.fear %></h3>
+        </div>
+        <div class="inline">
+          <div id="category">
+            <h3><%= emotion.comments %></h3>
+        </div>
+        </div>
+          <div id="clicks">
+            <form action="/emotions/<%= emotion.id %>?">
+              <input id="inTodos" type="Submit" value="Info"/>
+            </form>
+            <form method="Put" action="/emotions/<%= emotion.id %>/edit">
+              <input id="inTodos" type="Submit" value="Edit"/>
+            </form>
+            <form action="/emotions/<%= emotion.id %>?_method=Delete " method="Post">
+              <input id="inTodos" type="Submit" value="Delete"/>
+            </form>
+          </div>
+      </div>
+    </div>
+   </div>
+
+  <% } %>
+
+
+<% include ../partials/footer.ejs %>

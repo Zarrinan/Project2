@@ -1,0 +1,32 @@
+<% include ../partials/header.ejs %>
+
+<section class="page" id="midSection2">
+
+
+<div class='oneTodo'>
+
+
+      <h1><%= data.happiness %></h1>
+      <h3><%= data.sadness %></h3>
+      <h3><%= data.anger %></h3>
+      <h3><%= data.fear %></h3>
+      <h3><%= data.date_created %></h3>
+      <div id="desc">
+        <h2>Comments:</h2>
+      </div>
+      <p id="oneTodoP"><%= data.comments %></p>
+    <div id="clicks">
+          <form method="Put" action="/emotions/<%= data.id %>/edit">
+              <input id="inTodos" type="Submit" value="Edit"/>
+            </form>
+            <form action="/emotions/<%= data.id %>?_method=Delete " method="Post">
+              <input id="inTodos" type="Submit" value="Delete"/>
+            </form>
+          </div>
+
+
+      <a id="singleTodo" href='/emotions/'>Back to Analysis</a>
+  </div>
+</section>
+
+<% include ../partials/footer.ejs %>
