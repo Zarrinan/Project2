@@ -2,9 +2,12 @@
 const express = require('express');
 const logger = require('morgan');
 const path = require('path');
+const multer = require('multer');
 const bodyParser = require('body-parser');
 const request = require('request-promise-native');
+
 const ejs = require('ejs');
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -26,8 +29,37 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.use('/emotions', emotionRoutes);
 
-app.get('/test', (req, res) => {
+//--------------------File Upload Function-------------------------------------->
+const Storage = multer.diskStorage({
+  destination: function (req, file, callback) {
+    callback(null, "./assets/images");
+  },
+  filename: function (req, file, callback) {
+    callback(null, file.fieldname + "_" + Date.now() + "_" + file.originalname);
+  }
+});
 
+const upload = multer({ storage: Storage }).array("imgUploader", 5);
+//array(fieldname[maxCount]);
+
+// app.get("/", function (req, res) {
+//     res.sendFile(__dirname + "/index.html");
+// });
+
+app.post("/api/Upload", function (req, res) {
+upload(req, res, function (err) {
+    if (err) {
+        return res.end("Something went wrong!");
+    }
+    return res.end("File uploaded sucessfully!.");
+});
+});
+
+//--------------------File Upload Function-------------------------------------->
+
+//--------------------API Call Function----------------------------------------->
+
+app.get('/test', (req, res) => {
   const options = {
     method: 'post',
     url:    'https://westus.api.cognitive.microsoft.com/emotion/v1.0/recognize',
@@ -42,17 +74,15 @@ app.get('/test', (req, res) => {
     body:   {
       url: req.query.fileName,
     },
-
   };
 
   request(options)
-  .then(data => res.json(data))
-  .catch(error => res.json(error));
-
+    .then(data => res.json(data))
+    .catch(error => res.json(error));
 
 });
 
-
+//--------------------API Call Function----------------------------------------->
 app.get('/', (req, res) => {
   res.render('index');
 });

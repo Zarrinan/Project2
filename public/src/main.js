@@ -14,10 +14,7 @@ let msObject = {
     "anger": Math.floor(Math.random()*10),
     "fear": Math.floor(Math.random()*10),
 }
-  console.log(msObject.happiness);
-  console.log(msObject.sadness);
-  console.log(msObject.anger);
-  console.log(msObject.fear);
+
   $addHappiness.attr('placeholder', msObject.happiness);
   $addHappiness.val(msObject.happiness);
   $addSadness.attr('placeholder', msObject.sadness);
@@ -26,4 +23,35 @@ let msObject = {
   $addAnger.val(msObject.anger);
   $addFear.attr('placeholder', msObject.fear);
   $addFear.val(msObject.fear);
+
 });
+
+//----------------cloudinary api call------------------------->
+let cloudurl = "https://api.cloudinary.com/v1_1/dx4ans66h/upload";
+let cloud_preset = 'ymur1f6n';
+
+let imgPreview = document.getElementById('img-preview');
+let fileUpload = document.getElementById('file-upload');
+
+fileUpload.addEventListener('change', function () {
+  let file = event.target.files[0];
+  console.log(file);
+  let formData = new FormData();
+  formData.append('file', file);
+  formData.append('upload_preset', cloud_preset);
+
+  axios({
+    url: cloudurl,
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-urlencoded'
+    },
+    data: formData
+  }).then(function(res) {
+    imgPreview.src = res.data.secure_url;
+    console.log(res.data.secure_url);
+  }).catch(function(err) {
+    console.error(err);
+  });
+});
+//-------------------and of cloudinary api call---------------->

@@ -1,9 +1,16 @@
 <% include ../partials/header.ejs %>
 
    <section class="page" id="midSection2">
-  <div class='Welcome'>
-  <h1>Add a new record</h1>
-  </div>
+    <div class='Welcome'>
+      <h1>Add a new record</h1>
+    </div>
+        <div class="card">
+           <img id="img-preview" />
+           <label class="file-upload-container" for="file-upload">
+           <input id="file-upload" type="file" style="display:none;">
+           <h3>Select an Image</h3>
+            </label>
+         </div>
   <div class="addWrapper">
 <form method='POST' action='/emotions'>
         <div></div>
