@@ -2,15 +2,15 @@
 
 <section class="page" id="midSection2">
   <div class='Welcome'>
-  <h1>Edit Emotion</h1>
+  <h1>Edit</h1>
   </div>
   <div class="addWrapper">
       <form action="/emotions/<%= data.id %>?_method=Put" method="POST">
-        <input class="addInput" name='happiness' type='num' placeholder='<%= data.happiness %>' />
-        <input class="addInput" name='sadness' type='num' placeholder='<%= data.sadness %>' />
-        <input class="addInput" name='anger' type='num' placeholder='<%= data.anger %>'>
-         <input class="addInput" name='fear' type='num' placeholder='<%= data.fear %>'>
-        <input class="addInput" id="editDesc" name='comments' type='text' placeholder='<%= data.comments %>'>
+        <input class="addInput" name='happiness' type='num' value="<%= data.happiness %>" />
+        <input class="addInput" name='sadness' type='num' value='<%= data.sadness %>' />
+        <input class="addInput" name='anger' type='num' value='<%= data.anger %>'>
+         <input class="addInput" name='fear' type='num' value='<%= data.fear %>'>
+        <input class="addInput" id="editDesc" name='comments' type='text' value='<%= data.comments %>'>
         <input id="addSubmit" type='submit' value='Submit!' />
       </form>
 </div>

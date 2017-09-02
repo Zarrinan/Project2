@@ -1,3 +1,4 @@
+
 console.log('main.js is connected!');
 $(document).ready(function(){
 
@@ -7,24 +8,6 @@ $(document).ready(function(){
   $addSadness = $('#addSadness');
   $addAnger = $('#addAnger');
   $addFear = $('#addFear');
-
-let msObject = {
-    "happiness": Math.floor(Math.random()*10),
-    "sadness": Math.floor(Math.random()*10),
-    "anger": Math.floor(Math.random()*10),
-    "fear": Math.floor(Math.random()*10),
-}
-
-  $addHappiness.attr('placeholder', msObject.happiness);
-  $addHappiness.val(msObject.happiness);
-  $addSadness.attr('placeholder', msObject.sadness);
-  $addSadness.val(msObject.sadness);
-  $addAnger.attr('placeholder', msObject.anger);
-  $addAnger.val(msObject.anger);
-  $addFear.attr('placeholder', msObject.fear);
-  $addFear.val(msObject.fear);
-
-});
 
 //----------------cloudinary and ms api call------------------------->
 let cloudurl = "https://api.cloudinary.com/v1_1/dx4ans66h/upload";
@@ -49,13 +32,11 @@ fileUpload.addEventListener('change', function () {
     data: formData
   }).then(function(res) {
     imgPreview.src = res.data.secure_url;
-
+    console.log(res.data.secure_url);
     return res.data.secure_url;
 
   }).then(function(res) {
-        console.log(res);
-        callUrl = String(res);
-        console.log(callUrl);
+    console.log(res);
         $.ajax({
         url: "https://westus.api.cognitive.microsoft.com/emotion/v1.0/recognize?",
             beforeSend: function(xhrObj){
@@ -66,12 +47,27 @@ fileUpload.addEventListener('change', function () {
                 },
         type: "POST",
         // Request body
-        data: '{"url": window["callUrl"]}',
+        data: '{"url": "https://res.cloudinary.com/dx4ans66h/image/upload/v1504371682/v10m9sj3moutwywhygz4.jpg"}',
+        //https://res.cloudinary.com/dx4ans66h/image/upload/v1504371487/nlrsvlsifdf1rxhs1wqj.jpg
+        //https://res.cloudinary.com/dx4ans66h/image/upload/v1504369401/woshrw0spsyzi9ygyaeb.jpg
+        //https://res.cloudinary.com/dx4ans66h/image/upload/v1504371682/v10m9sj3moutwywhygz4.jpg
           }).done(function(data) {
-              alert("success");
+            $addHappiness.attr('placeholder', data[0].scores.happiness);
+            $addHappiness.val(parseInt(data[0].scores.happiness));
+            $addSadness.attr('placeholder', data[0].scores.sadness);
+            $addSadness.val(parseInt(data[0].scores.sadness));
+            $addAnger.attr('placeholder', data[0].scores.anger);
+            $addAnger.val(parseInt(data[0].scores.anger));
+            $addFear.attr('placeholder', data[0].scores.fear);
+            $addFear.val(parseInt(data[0].scores.fear));
+              console.log(data);
+              console.log(data[0].scores.happiness);
+              console.log(parseInt(data[0].scores.sadness));
+              console.log(data[0].scores.anger);
+              console.log(data[0].scores.fear);
+              //alert("success");
           });
         });
       });
-
-
+});
 //-------------------and of cloudinary and ms api call---------------->

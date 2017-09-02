@@ -3,7 +3,7 @@
 <section class="page" id="midSection2">
 
 
-<div class='oneTodo'>
+<div class='oneEmotion'>
 
 
       <h1><%= data.happiness %></h1>
@@ -14,18 +14,18 @@
       <div id="desc">
         <h2>Comments:</h2>
       </div>
-      <p id="oneTodoP"><%= data.comments %></p>
+      <p id="oneEmotionP"><%= data.comments %></p>
     <div id="clicks">
           <form method="Put" action="/emotions/<%= data.id %>/edit">
-              <input id="inTodos" type="Submit" value="Edit"/>
+              <input id="inEmotions" type="Submit" value="Edit"/>
             </form>
             <form action="/emotions/<%= data.id %>?_method=Delete " method="Post">
-              <input id="inTodos" type="Submit" value="Delete"/>
+              <input id="inEmotions" type="Submit" value="Delete"/>
             </form>
           </div>
 
 
-      <a id="singleTodo" href='/emotions/'>Back to Analysis</a>
+      <a id="singleEmotion" href='/emotions/'>Back to Analysis</a>
   </div>
 </section>
 

@@ -2,7 +2,7 @@
 
    <section class="page" id="midSection2">
     <div class='Welcome'>
-      <h1>Add a new record</h1>
+      <h1>Let's see..</h1>
     </div>
         <div class="card">
            <img id="img-preview" />
@@ -14,12 +14,12 @@
   <div class="addWrapper">
 <form method='POST' action='/emotions'>
         <div></div>
-        <input class="addInput" id="addHappiness" name='happiness' type='num' placeholder='<%= %>'/>
-        <input class="addInput" id="addSadness" name='sadness' type='num' placeholder='<%= Math.floor(Math.random()*10) %>'/>
-        <input class="addInput" id="addAnger" name='anger' type='num' placeholder='<%= Math.floor(Math.random()*10) %>'/>
-        <input class="addInput" id="addFear" name='fear' type='num' placeholder='<%= Math.floor(Math.random()*10) %>' />
-        <input class="addInput" id="editDesc" name='comments' type='text' placeholder='<%= 'comments' %>' />
-        <input id="addSubmit" type='submit' value='Submit!' />
+        <input class="addInput" id="addHappiness" name='happiness' type='num' value='<%=  %>'/>
+        <input class="addInput" id="addSadness" name='sadness' type='num' value='<%=  %>'/>
+        <input class="addInput" id="addAnger" name='anger' type='num' value='<%=  %>'/>
+        <input class="addInput" id="addFear" name='fear' type='num' value='<%= %>' />
+        <input class="addInput" id="editDesc" name='comments' type='text' value='<%= 'comments' %>' />
+        <input id="addSubmit" type='submit' value='Add the record' />
   <div id="desc">
 </form>
 </div>
