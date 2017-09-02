@@ -26,7 +26,7 @@ let msObject = {
 
 });
 
-//----------------cloudinary api call------------------------->
+//----------------cloudinary and ms api call------------------------->
 let cloudurl = "https://api.cloudinary.com/v1_1/dx4ans66h/upload";
 let cloud_preset = 'ymur1f6n';
 
@@ -49,9 +49,29 @@ fileUpload.addEventListener('change', function () {
     data: formData
   }).then(function(res) {
     imgPreview.src = res.data.secure_url;
-    console.log(res.data.secure_url);
-  }).catch(function(err) {
-    console.error(err);
-  });
-});
-//-------------------and of cloudinary api call---------------->
+
+    return res.data.secure_url;
+
+  }).then(function(res) {
+        console.log(res);
+        callUrl = String(res);
+        console.log(callUrl);
+        $.ajax({
+        url: "https://westus.api.cognitive.microsoft.com/emotion/v1.0/recognize?",
+            beforeSend: function(xhrObj){
+                // Request headers
+                xhrObj.setRequestHeader("Content-Type","application/json");
+                // NOTE: Replace the "Ocp-Apim-Subscription-Key" value with a valid subscription key.
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "1d5ac4d7edda4b41a8681d3a8fcdb337");
+                },
+        type: "POST",
+        // Request body
+        data: '{"url": window["callUrl"]}',
+          }).done(function(data) {
+              alert("success");
+          });
+        });
+      });
+
+
+//-------------------and of cloudinary and ms api call---------------->
