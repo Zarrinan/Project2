@@ -36,6 +36,7 @@ emotionController.create = (req, res) => {
     anger: req.body.anger,
     fear: req.body.fear,
     comments: req.body.comments,
+    user_name_id: req.body.user_name_id,
   }).then(emotion => {
     res.redirect('/emotions');
   }).catch(err => {
@@ -51,6 +52,7 @@ emotionController.update = (req, res) => {
     anger: req.body.anger,
     fear: req.body.fear,
     comments: req.body.comments,
+    user_name_id: req.body.user_name_id,
   }, req.params.id).then(emotion => {
     res.redirect('/emotions');
   }).catch(err => {

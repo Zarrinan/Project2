@@ -10,7 +10,7 @@ const ejs = require('ejs');
 
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 7000;
 
 
 const methodOverride = require('method-override');

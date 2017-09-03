@@ -1,12 +1,14 @@
 \connect emotions_db_dev;
+DROP TABLE IF EXISTS emotions;
+DROP TABLE IF EXISTS users;
 
-CREATE TABLE IF NOT EXISTS users (
+
+CREATE TABLE users (
 id SERIAL PRIMARY KEY,
 user_name VARCHAR(255)
 );
 
-
-CREATE TABLE IF NOT EXISTS emotions (
+CREATE TABLE emotions (
 id SERIAL PRIMARY KEY,
 happiness INT,
 sadness INT,
