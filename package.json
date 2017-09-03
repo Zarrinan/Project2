@@ -9,7 +9,7 @@
     "dev": "nodemon server.js",
     "debug": "nodemon --inspect"
   },
-  "author": "Zarrina Niyazova",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.2",
