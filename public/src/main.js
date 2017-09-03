@@ -47,25 +47,23 @@ fileUpload.addEventListener('change', function () {
                 },
         type: "POST",
         // Request body
-        data: '{"url": "https://res.cloudinary.com/dx4ans66h/image/upload/v1504371682/v10m9sj3moutwywhygz4.jpg"}',
+        data: '{"url": "https://res.cloudinary.com/dx4ans66h/image/upload/v1504397174/z3s1hffchyminfvtytsc.jpg"}',
+        //https://res.cloudinary.com/dx4ans66h/image/upload/v1504396334/xop6q3x5cv9xll2xlufu.jpg
         //https://res.cloudinary.com/dx4ans66h/image/upload/v1504371487/nlrsvlsifdf1rxhs1wqj.jpg
         //https://res.cloudinary.com/dx4ans66h/image/upload/v1504369401/woshrw0spsyzi9ygyaeb.jpg
         //https://res.cloudinary.com/dx4ans66h/image/upload/v1504371682/v10m9sj3moutwywhygz4.jpg
+        //https://res.cloudinary.com/dx4ans66h/image/upload/v1504395939/ut3dvu7rj1cj9645xley.jpg
           }).done(function(data) {
-            $addHappiness.attr('placeholder', data[0].scores.happiness);
-            $addHappiness.val(parseInt(data[0].scores.happiness));
-            $addSadness.attr('placeholder', data[0].scores.sadness);
-            $addSadness.val(parseInt(data[0].scores.sadness));
-            $addAnger.attr('placeholder', data[0].scores.anger);
-            $addAnger.val(parseInt(data[0].scores.anger));
-            $addFear.attr('placeholder', data[0].scores.fear);
-            $addFear.val(parseInt(data[0].scores.fear));
+
+            $addHappiness.val(parseInt(data[0].scores.happiness * 100));
+            $addSadness.val(parseInt(data[0].scores.sadness * 100));
+            $addAnger.val(parseInt(data[0].scores.anger * 100));
+            $addFear.val(parseInt(data[0].scores.fear * 100));
               console.log(data);
               console.log(data[0].scores.happiness);
-              console.log(parseInt(data[0].scores.sadness));
+              console.log(data[0].scores.sadness);
               console.log(data[0].scores.anger);
               console.log(data[0].scores.fear);
-              //alert("success");
           });
         });
       });

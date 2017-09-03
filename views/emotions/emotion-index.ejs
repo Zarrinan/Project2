@@ -11,10 +11,10 @@
     <div class='todo'>
       <div class="inline">
         <div id="title">
-            <h3><%= emotion.date_created %></h3>
+            <h4><%= emotion.date_created %></h4>
         </div>
         <div id="status">
-            <h3><%= emotion.happiness %></h3>
+            <h4><%= emotion.happiness %></h4>
         </div>
         <div class="inline">
           <div id="category">
@@ -35,13 +35,13 @@
         </div>
           <div id="clicks">
             <form action="/emotions/<%= emotion.id %>?">
-              <input id="inTodos" type="Submit" value="Info"/>
+              <input id="inEmotions" type="Submit" value="Info"/>
             </form>
             <form method="Put" action="/emotions/<%= emotion.id %>/edit">
-              <input id="inTodos" type="Submit" value="Edit"/>
+              <input id="inEmotions" type="Submit" value="Edit"/>
             </form>
             <form action="/emotions/<%= emotion.id %>?_method=Delete " method="Post">
-              <input id="inTodos" type="Submit" value="Delete"/>
+              <input id="inEmotions" type="Submit" value="Delete"/>
             </form>
           </div>
       </div>
@@ -50,5 +50,9 @@
 
   <% } %>
 
+
+<svg width="600" height="210"></svg>
+<script src="//d3js.org/d3.v4.min.js"></script>
+<script src='/src/d3.js'></script>
 
 <% include ../partials/footer.ejs %>
