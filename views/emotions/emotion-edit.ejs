@@ -1,19 +1,47 @@
 <% include ../partials/header.ejs %>
 
 <section class="page" id="midSection2">
-  <div class='Welcome'>
-  <h1>Edit</h1>
-  </div>
-  <div class="addWrapper">
-      <form action="/emotions/<%= data.id %>?_method=Put" method="POST">
-        <input class="addInput" name='happiness' type='num' value="<%= data.happiness %>" />
-        <input class="addInput" name='sadness' type='num' value='<%= data.sadness %>' />
-        <input class="addInput" name='anger' type='num' value='<%= data.anger %>'>
-         <input class="addInput" name='fear' type='num' value='<%= data.fear %>'>
-        <input class="addInput" id="editDesc" name='comments' type='text' value='<%= data.comments %>'>
 
-        <label for="user_name_id"> Name
-            <select name="user_name_id" type='text'>
+<div class='oneEmotion'>
+
+          <h3 class="singleData"><%= data.date_created %></h3>
+
+          <h3 class="singleData" id="singleBold"><%= data.user_name %></h3>
+
+  <form action="/emotions/<%= data.id %>?_method=Put" method="POST">
+
+  <div class="addInput">
+          <div class="scoreName">
+          <h4 class='scoreWord'>Happiness</h4>
+          </div>
+        <input class="score" id="addHappiness" name='happiness' type='num' value='<%= data.happiness %>'/>
+           </div>
+          <div class="addInput">
+          <div class="scoreName">
+          <h4 class='scoreWord'>Sadness</h4>
+          </div>
+        <input class="score" id="addSadness" name='sadness' type='num' value='<%= data.sadness %>'/>
+          </div>
+          <div class="addInput">
+          <div class="scoreName">
+          <h4 class='scoreWord'>Anger</h4>
+          </div>
+        <input class="score" id="addAnger" name='anger' type='num' value='<%= data.anger %>'/>
+           </div>
+          <div class="addInput">
+          <div class="scoreName">
+          <h4 class='scoreWord'>Fear</h4>
+          </div>
+        <input class="score" id="addFear" name='fear' type='num' value='<%= data.fear %>' />
+           </div>
+          <div id="desc">
+            <h2 class="singleData">Thoughts:</h2>
+          </div>
+          <div id="">
+        <input id="oneEmotionP" name='comments' type='text' placeholder='thoughts' value='<%= data.comments %>' />
+          </div>
+        <label for="user_name_id">
+        Name <select name="user_name_id" type='text' id="selectUser">
               <option value='1'>Mischelle</option>
               <option value='2'>Andy</option>
               <option value='3'>Devin</option>
@@ -24,10 +52,18 @@
             </select>
           </label></br>
 
-        <input id="addSubmit" type='submit' value='Submit!' />
+      <div id="clicks">
+      <input id="inEmotions" type='submit' value='Save' />
       </form>
-</div>
- <a id="editBack" href='/emotions/'>Back to Analysis</a>
-</section>
+            <form action="/emotions/<%= data.id %>?_method=Delete " method="Post">
+              <input id="inEmotions" type="Submit" value="Delete"/>
+            </form>
+          </div>
 
+      <a id="singleEmotion" href='/emotions/'>Back to Analysis</a>
+  </div>
+
+</div>
+
+</section>
 <% include ../partials/footer.ejs %>

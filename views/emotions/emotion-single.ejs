@@ -5,29 +5,53 @@
 
 <div class='oneEmotion'>
 
+          <h3 class="singleData"><%= data.date_created %></h3>
 
-      <h1><%= data.happiness %></h1>
-      <h3><%= data.sadness %></h3>
-      <h3><%= data.anger %></h3>
-      <h3><%= data.fear %></h3>
-      <h3><%= data.date_created %></h3>
-      <div id="desc">
-        <h2>Comments:</h2>
-      </div>
-      <h3><%= data.user_name %></h3>
-      <p id="oneEmotionP"><%= data.comments %></p>
-    <div id="clicks">
+          <h3 class="singleData" id="singleBold"><%= data.user_name %></h3>
+
+          <div class="addInput">
+            <div class="scoreName">
+              <h4 class='scoreWord'>Happiness</h4>
+            </div>
+              <h3><%= data.happiness %></h3>
+           </div>
+
+          <div class="addInput">
+            <div class="scoreName">
+              <h4 class='scoreWord'>Sadness</h4>
+            </div>
+             <h3><%= data.sadness %></h3>
+          </div>
+          <div class="addInput">
+            <div class="scoreName">
+              <h4 class='scoreWord'>Anger</h4>
+            </div>
+              <h3><%= data.anger %></h3>
+           </div>
+          <div class="addInput">
+            <div class="scoreName">
+              <h4 class='scoreWord'>Fear</h4>
+            </div>
+              <h3><%= data.fear %></h3>
+            </div>
+
+          <div id="desc">
+            <h2 class="singleData">Thoughts:</h2>
+          </div>
+            <p id="oneEmotionP"><%= data.comments %></p>
+
+     <div id="clicks">
+
           <form method="Put" action="/emotions/<%= data.id %>/edit">
               <input id="inEmotions" type="Submit" value="Edit"/>
             </form>
+
             <form action="/emotions/<%= data.id %>?_method=Delete " method="Post">
               <input id="inEmotions" type="Submit" value="Delete"/>
             </form>
           </div>
 
-
       <a id="singleEmotion" href='/emotions/'>Back to Analysis</a>
   </div>
-</section>
 
 <% include ../partials/footer.ejs %>
