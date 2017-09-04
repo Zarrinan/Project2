@@ -21,5 +21,5 @@ date_created TIMESTAMP NOT NULL DEFAULT NOW()
 
 
 
--- CREATE INDEX ON emotions (happiness);
--- CREATE INDEX ON emotions (sadness);
+CREATE INDEX ON emotions (happiness);
+CREATE INDEX ON emotions (sadness);

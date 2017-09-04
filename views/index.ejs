@@ -1,12 +1,21 @@
-<% include ./partials/header.ejs %>
+<% include ./partials/headerindex.ejs %>
 
    <section class="page" id="midSection">
     <div class="Welcome">
-    <h1>Welcome to emotions track App!</h1>
+    <p id="pindex"> This app gives you an easy and efficient way to record your emotions in your everyday life.
+    Most of the times, we can tell what our emotions are, and give them some scores; at the same time,
+    there are might be some changes in our emotions we are not aware of, and these changes can be persistent
+    and affect our life. Or, we might feel exhausted sometimes, and still tell ourselves we are okay.
+    So, this app is an objective watcher of our emotions, that would be able to ‘read’ our emotions from
+    our pictures. All you have to do is to take pictures of yourselves everyday, the app will ‘read’ your
+    emotions and log them into a calendar. So, at the end of some period, a week or a month, you can check
+    how you've been</p>
     </div>
 
       <form action=/emotions/add>
-         <input id="landing" type="submit" value="get started"/>
+         <input id="nameindex" name='username' type='text' placeholder='user name' />
+         <input id="nameindex" name='username' type='text' placeholder='password' />
+         <input id="startindex" type="submit" value="get started"/>
       </form>
 
     </section>

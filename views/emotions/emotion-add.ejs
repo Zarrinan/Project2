@@ -1,27 +1,45 @@
 <% include ../partials/header.ejs %>
 
    <section class="page" id="midSection2">
-    <div class='Welcome'>
-      <h1>Let's see..</h1>
-    </div>
-        <div class="card">
+
+      <h1 id="addTitle">Add your picture</h1>
+
+  <div class="addWrapper">
+  <div class="card">
            <img id="img-preview" />
            <label class="file-upload-container" for="file-upload">
            <input id="file-upload" type="file" style="display:none;">
            <h3>Select an Image</h3>
             </label>
          </div>
-  <div class="addWrapper">
-<form method='POST' action='/emotions'>
-
-        <input class="addInput" id="addHappiness" name='happiness' type='num' value='<%=  %>'/>
-        <input class="addInput" id="addSadness" name='sadness' type='num' value='<%=  %>'/>
-        <input class="addInput" id="addAnger" name='anger' type='num' value='<%=  %>'/>
-        <input class="addInput" id="addFear" name='fear' type='num' value='<%= %>' />
-        <input class="addInput" id="editDesc" name='comments' type='text' placeholder='thoughts' value='<%= %>' />
-
-        <label for="user_name_id"> Name
-            <select name="user_name_id" type='text'>
+<form id="formAddScore" method='POST' action='/emotions'>
+          <div class="addInput">
+          <div class="scoreName">
+          <h4 class='scoreWord'>Happiness</h4>
+          </div>
+        <input class="score" id="addHappiness" name='happiness' type='num' value='<%=  %>'/>
+           </div>
+          <div class="addInput">
+          <div class="scoreName">
+          <h4 class='scoreWord'>Sadness</h4>
+          </div>
+        <input class="score" id="addSadness" name='sadness' type='num' value='<%=  %>'/>
+          </div>
+          <div class="addInput">
+          <div class="scoreName">
+          <h4 class='scoreWord'>Anger</h4>
+          </div>
+        <input class="score" id="addAnger" name='anger' type='num' value='<%=  %>'/>
+           </div>
+          <div class="addInput">
+          <div class="scoreName">
+          <h4 class='scoreWord'>Fear</h4>
+          </div>
+        <input class="score" id="addFear" name='fear' type='num' value='<%= %>' />
+           </div>
+        <input class="addInput" id="addThoughts" name='comments' type='text' placeholder='thoughts' value='<%= %>' />
+        <label id="addUser" for="user_name_id"> Name
+            <select name="user_name_id" type='text' id="selectUser">
               <option value='1'>Mischelle</option>
               <option value='2'>Andy</option>
               <option value='3'>Devin</option>
@@ -33,6 +51,7 @@
           </label></br>
         <input id="addSubmit" type='submit' value='Add the record' />
 </form>
+</div>
 
 
 
