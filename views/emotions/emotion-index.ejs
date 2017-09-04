@@ -1,56 +1,41 @@
 <% include ../partials/header.ejs %>
 
-<section class="page" id="midSection2">
+<section class="page" id="midSection3">
 
 
- <div id="todoList">
-    <div id="addTodo">
+
+ <div id="emotionList">
+    <div id="addEmotion">
       <a href="/emotions/add">How are you doing today?</a>
     </div>
  <% for (let emotion of data) { %>
-    <div class='todo'>
-      <div class="inline">
-        <div id="title">
-            <h4><%= emotion.date_created %></h4>
-        </div>
-        <div id="status">
-            <h4><%= emotion.happiness %></h4>
-        </div>
-        <div class="inline">
-          <div id="category">
-            <h3><%= emotion.sadness %></h3>
-        </div>
-        <div class="inline">
-          <div id="category">
-            <h3><%= emotion.anger %></h3>
-          </div>
-        <div class="inline">
-          <div id="category">
-            <h3><%= emotion.fear %></h3>
-        </div>
-        <div class="inline">
-          <div id="category">
-            <h3><%= emotion.comments %></h3>
-        </div>
-        <div class="inline">
-          <div id="category">
-            <h3><%= emotion.user_name %></h3>
-        </div>
-        </div>
+    <div class='emotion'>
+    <div class='emotionText'>
+    <h4> On <span class="spanDate"><%= emotion.date_created %></span> </br>
+    <span class="spanUser"><%= emotion.user_name %>'s</span>
+    emotions were </br> happiness: <%= emotion.happiness %>, sadness:
+    <%= emotion.sadness %>, anger: <%= emotion.anger %>, fear:
+    <%= emotion.fear %> </br> <span class="spanThoughts"> Thoughts about emotions: </span> <h3>"<%= emotion.comments %>"</h3>
+    </div>
+    </div>
+
           <div id="clicks">
+
             <form action="/emotions/<%= emotion.id %>?">
               <input id="inEmotions" type="Submit" value="Info"/>
             </form>
+
             <form method="Put" action="/emotions/<%= emotion.id %>/edit">
               <input id="inEmotions" type="Submit" value="Edit"/>
             </form>
+
             <form action="/emotions/<%= emotion.id %>?_method=Delete " method="Post">
               <input id="inEmotions" type="Submit" value="Delete"/>
             </form>
-          </div>
-      </div>
-    </div>
-   </div>
+
+  </div>
+
+
 
   <% } %>
 

@@ -85,7 +85,7 @@ a {
 }
 
 a:hover {
-  color: rgb(110,183,207);
+  color: #5aadc9;
 }
 
 
@@ -114,7 +114,15 @@ footer {
   justify-content: flex-start;
   margin-top: 50px;
   /*height: 400px;*/
+}
 
+#midSection3 {
+  background-color: skyBlue;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 50px;
+  /*height: 400px;*/
 }
 
 h1 {
@@ -140,47 +148,83 @@ h1 {
 }
 
 #inEmotions {
-  width: 72px;
-  height: 50px;
+  width: 85px;
+  height: 35px;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: bold;
   font-size: 15px;
-  background: rgb(255,249,200);
+  background: #5aadc9;
   color: black;
   display: block;
   text-align: center;
   padding: 0 0 7px;
   box-shadow: inset 0 -3px 0 rgba(0,0,0,.2);
   border-radius: 5px;
+  margin: 0 0px;
 }
 
 #emotionList {
   margin: 0 auto;
   margin-top: 50px;
   width: 400px;
+  display: flex;
+  flex-direction: column;
+
 }
 
+.emotion {
+ box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+  width: 470px;
+  height: ;
+  padding: 0;
+  margin: 0 auto;
+  border: 1px solid rgb(95,110,121);
+  border-radius: 10px;
+}
+
+.emotion:hover {
+    box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+    border: 2px solid #5aadc9;
+    font-size: 105%;
+
+}
+
+.emotionText {
+ /* border-radius: 50%;
+  border: 1px solid rgb(95,110,121);*/
+
+  /*border-bottom: 1px solid rgb(95,110,121);*/
+/*box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+*/}
+
+
 #addEmotion {
-  width: 400px;
+  width: 470px;
   height: 50px;
-  border: 2px solid;
+/*  box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+*/  /*border: 1px solid rgb(95,110,121);*/
   text-align: center;
   border-radius: 5px;
   padding-bottom: 10px;
   text-transform: uppercase;
-
+  margin-bottom: 15px;
+  font-weight: bold;
 }
-.emotion {
-  border: 1px solid;
-  width: 400px;
-  height: 102px;
-  padding: 0;
-  margin: 0 auto;
-  border: 2px solid;
-  border-radius: 3px;
 
+.spanDate {
+font-size: 90%;
 }
+
+.spanUser {
+  font-weight: bold;
+  font-size: 105%;
+}
+
+.spanThoughts {
+  font-size: 90%;
+}
+
 
 .inline {
   width: 400px;
@@ -210,6 +254,8 @@ h1 {
   flex: 0 0 60%;
   display: flex;
   justify-content: center;
+  width: 470px;
+  margin-bottom: 15px;
 }
 .addTitle {
   margin: 0 auto;
@@ -278,15 +324,7 @@ h1 {
   color: initial;
 }
 
-#addSubmit {
-  width: 223px;
-  height: 30px;
-  font-size: 16px;
-  padding: 2px 5px 10px;
-  /*background-color: #3F51B5;*/
-  border-radius: 5px;
-  color: white;
-}
+
 
 .oneEmotion {
   width: 400px;
@@ -330,6 +368,16 @@ p {
 
 }
 
+#addSubmit {
+  width: 225px;
+  height: 30px;
+  font-size: 20px;
+  padding: 2px 5px 10px;
+/*  background-color: #3F51B5;
+*/  border-radius: 1px;
+  color: white;
+}
+
 .card {
   background: white;
   display: flex;
@@ -345,7 +393,7 @@ p {
 
 .file-upload-container {
     width: 240px;
-    height: 50px;
+    height: 29px;
     background: #3F51B5;
     transition: all 150ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
     text-align: center;
@@ -353,7 +401,11 @@ p {
     line-height: 50px;
     font-weight: 300;
     font-size: 20px;
-/*    border-radius: 10px;
+    padding: 2px 0px 2px;
+    text-align: center;
+    line-height: 30px;
+/*    border-radius: 5px;
+*//*    border-radius: 10px;
 */}
 
 .file-upload-container:hover {
