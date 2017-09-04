@@ -29,6 +29,12 @@ body {
   line-height: 1;
   display: flex;
 }
+#header {
+  overflow: hidden;
+  border-bottom: 1px solid rgb(167,163,160);
+  padding: 0 3%;
+  font-size: 20px;
+}
 
 #navindex {
   text-transform: uppercase;
@@ -57,12 +63,6 @@ body {
 img {
   width: 100%;
   height: 100%;
-}
-#header {
-  overflow: hidden;
-  border-bottom: 2px solid;
-  padding: 0 3%;
-  font-size: 20px;
 }
 
 #navbar {
@@ -117,7 +117,8 @@ footer {
 }
 
 #midSection3 {
-  background-color: skyBlue;
+  background: url('https://image.ibb.co/fMBAUF/selBWO.jpg');
+  opacity: ;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -175,18 +176,21 @@ h1 {
 
 .emotion {
  box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+ opacity: 0.8;
   width: 470px;
   height: ;
   padding: 0;
   margin: 0 auto;
   border: 1px solid rgb(95,110,121);
   border-radius: 10px;
+  background-color: rgba(255,255,255,1);
 }
 
 .emotion:hover {
     box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
     border: 2px solid #5aadc9;
     font-size: 105%;
+    opacity: 1;
 
 }
 
@@ -205,13 +209,17 @@ h1 {
 /*  box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
 */  /*border: 1px solid rgb(95,110,121);*/
   text-align: center;
-  border-radius: 5px;
+  border-radius: 10px;
   padding-bottom: 10px;
   text-transform: uppercase;
   margin-bottom: 15px;
   font-weight: bold;
+  background-color: rgba(167, 163, 160, 0.5);
 }
 
+#addEmotion:hover {
+  background-color: #fff;
+}
 .spanDate {
 font-size: 90%;
 }
