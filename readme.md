@@ -42,7 +42,9 @@ Emotion is an application designed to track emotions through selfies. A user is 
  
  - CSS
  
- - HTML
+ - ejs
+ 
+ - SQL
  
  ## Instructions 
  
