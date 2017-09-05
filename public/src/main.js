@@ -10,6 +10,8 @@ $(document).ready(function(){
   $addFear = $('#addFear');
 
 //----------------cloudinary and ms api call------------------------->
+
+//axios cloudinary API call tutorial https://www.youtube.com/watch?v=6uHfIv4981U&t=47s
 let cloudurl = "https://api.cloudinary.com/v1_1/dx4ans66h/upload";
 let cloud_preset = 'ymur1f6n';
 
@@ -47,12 +49,8 @@ fileUpload.addEventListener('change', function () {
                 },
         type: "POST",
         // Request body
-        data: '{"url": "https://res.cloudinary.com/dx4ans66h/image/upload/v1504397174/z3s1hffchyminfvtytsc.jpg"}',
-        //https://res.cloudinary.com/dx4ans66h/image/upload/v1504396334/xop6q3x5cv9xll2xlufu.jpg
-        //https://res.cloudinary.com/dx4ans66h/image/upload/v1504371487/nlrsvlsifdf1rxhs1wqj.jpg
-        //https://res.cloudinary.com/dx4ans66h/image/upload/v1504369401/woshrw0spsyzi9ygyaeb.jpg
-        //https://res.cloudinary.com/dx4ans66h/image/upload/v1504371682/v10m9sj3moutwywhygz4.jpg
-        //https://res.cloudinary.com/dx4ans66h/image/upload/v1504395939/ut3dvu7rj1cj9645xley.jpg
+        data: '{"url": "https://res.cloudinary.com/dx4ans66h/image/upload/v1504618609/ty3mc3khmmdtjoduniyn.jpg"}',
+
           }).done(function(data) {
 
             $addHappiness.val(parseInt(data[0].scores.happiness * 100));
