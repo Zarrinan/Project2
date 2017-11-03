@@ -48,10 +48,10 @@ Emotion is an application designed to track emotions through selfies. A user is 
  
  ## Instructions 
  
- To download the app and run it on your local host, click on `Clone or download` copy 
- `Clone with SSH` link. On your local terminal go to the directory you want to copy
- this project and run the command `git clone [link you've copied]`. Go to the copied directory
- and run `npm run start`, and in your local browser enter `localhost:7000`. To restart 
- the server run `npm run dev` on the command line.
+ To download the app and run it on your local host, click on `Clone or download` button, copy 
+ `Clone with SSH` link. On your local terminal, go to the directory you want to copy
+ this project in, and run the command `git clone [link you've copied]`. Go to the copied directory
+ and run `npm i` and then, `npm run start`, and in your local browser enter `localhost:7000`. To restart 
+ the server run `npm run dev` in the command line.
  
  
